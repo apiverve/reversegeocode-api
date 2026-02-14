@@ -17,14 +17,11 @@ def call_reversegeocode_api():
     Make a GET request to the Reverse Geocode API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;lat&#x27;: 40.714224, &#x27;lon&#x27;: -73.961452}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
