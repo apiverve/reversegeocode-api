@@ -11,15 +11,13 @@ namespace APIVerve.API.ReverseGeocode
     public class ReverseGeocodeQueryOptions
     {
         /// <summary>
-        /// The latitude of the coordinates (e.g., 40.714224)
-        /// Example: 40.714224
+        /// The latitude of the coordinates
         /// </summary>
         [JsonProperty("lat")]
         public string Lat { get; set; }
 
         /// <summary>
-        /// The longitude of the coordinates (e.g., -73.961452)
-        /// Example: -73.961452
+        /// The longitude of the coordinates
         /// </summary>
         [JsonProperty("lon")]
         public string Lon { get; set; }
