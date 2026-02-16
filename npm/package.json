@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/reversegeocode",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Reverse Geocode is a simple tool for getting the location of a set of coordinates. Only supports USA and Canada Coordinates. It returns the city, state, and more.",
   "main": "index.js",
   "types": "index.d.ts",
