@@ -44,7 +44,10 @@ from apiverve_reversegeocode.apiClient import ReversegeocodeAPIClient
 # Initialize the client with your APIVerve API key
 api = ReversegeocodeAPIClient("[YOUR_API_KEY]")
 
-query = { "lat": 40.714224, "lon": -73.961452 }
+query = {
+    "lat": 40.714224,
+    "lon": -73.961452
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "lat": 40.714224, "lon": -73.961452 }
+query = {
+    "lat": 40.714224,
+    "lon": -73.961452
+}
 ```
 
 ###### Simple Request
@@ -139,7 +145,10 @@ from apiverve_reversegeocode.apiClient import ReversegeocodeAPIClient, Reversege
 
 api = ReversegeocodeAPIClient("[YOUR_API_KEY]")
 
-query = { "lat": 40.714224, "lon": -73.961452 }
+query = {
+    "lat": 40.714224,
+    "lon": -73.961452
+}
 
 try:
     result = api.execute(query)
@@ -160,7 +169,10 @@ from apiverve_reversegeocode.apiClient import ReversegeocodeAPIClient, Reversege
 
 api = ReversegeocodeAPIClient("[YOUR_API_KEY]")
 
-query = { "lat": 40.714224, "lon": -73.961452 }
+query = {
+    "lat": 40.714224,
+    "lon": -73.961452
+}
 
 try:
     result = api.execute(query)
@@ -194,7 +206,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_reversegeocode.apiClient import ReversegeocodeAPIClient, ReversegeocodeAPIClientError
 
-query = { "lat": 40.714224, "lon": -73.961452 }
+query = {
+    "lat": 40.714224,
+    "lon": -73.961452
+}
 
 # Using context manager ensures proper cleanup
 with ReversegeocodeAPIClient("[YOUR_API_KEY]") as api:
@@ -220,7 +235,10 @@ from apiverve_reversegeocode.apiClient import ReversegeocodeAPIClient
 # Enable debug mode
 api = ReversegeocodeAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "lat": 40.714224, "lon": -73.961452 }
+query = {
+    "lat": 40.714224,
+    "lon": -73.961452
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -235,8 +253,12 @@ from apiverve_reversegeocode.apiClient import ReversegeocodeAPIClient
 
 api = ReversegeocodeAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "lat": 40.714224,
+    "lon": -73.961452
+}
+
 try:
-    query = { "lat": 40.714224, "lon": -73.961452 }
     result = api.execute(query)
     print(result)
 finally:
