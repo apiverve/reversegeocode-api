@@ -133,8 +133,6 @@ async function makeRequest() {
     "latitudeClosest": "40.712090",
     "longitudeClosest": "-73.95427",
     "countryCode": "US",
-    "latitudeClosestCity": null,
-    "longitudeClosestCity": null,
     "latitude": 40.714224,
     "longitude": -73.961452,
     "estimatedCity": true,
