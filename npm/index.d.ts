@@ -4,29 +4,39 @@ declare module '@apiverve/reversegeocode' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface reversegeocodeResponse {
     status: string;
     error: string | null;
     data: ReverseGeocodeData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface ReverseGeocodeData {
-      zipcode:              string;
-      stateAbbr:            string;
-      city:                 string;
-      state:                string;
-      distance:             number;
-      latitudeClosest:      string;
-      longitudeClosest:     string;
-      countryCode:          string;
-      latitudeClosestCity:  null;
-      longitudeClosestCity: null;
-      latitude:             number;
-      longitude:            number;
-      estimatedCity:        boolean;
-      nearestCities:        string[];
+      zipcode:          null | string;
+      stateAbbr:        null | string;
+      city:             null | string;
+      state:            null | string;
+      distance:         number | null;
+      latitudeClosest:  null | string;
+      longitudeClosest: null | string;
+      countryCode:      null | string;
+      latitude:         number | null;
+      longitude:        number | null;
+      estimatedCity:    boolean | null;
+      nearestCities:    (null | string)[];
   }
 
   export default class reversegeocodeWrapper {
