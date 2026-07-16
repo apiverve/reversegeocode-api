@@ -25,12 +25,15 @@ namespace APIVerve.API.ReverseGeocode
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("zipcode")]
-        public long Zipcode { get; set; }
+        public long? Zipcode { get; set; }
 
         [JsonProperty("state_abbr")]
         public string StateAbbr { get; set; }
@@ -42,7 +45,7 @@ namespace APIVerve.API.ReverseGeocode
         public string State { get; set; }
 
         [JsonProperty("distance")]
-        public double Distance { get; set; }
+        public double? Distance { get; set; }
 
         [JsonProperty("latitudeClosest")]
         public string LatitudeClosest { get; set; }
@@ -53,22 +56,28 @@ namespace APIVerve.API.ReverseGeocode
         [JsonProperty("countryCode")]
         public string CountryCode { get; set; }
 
-        [JsonProperty("latitudeClosestCity")]
-        public object LatitudeClosestCity { get; set; }
-
-        [JsonProperty("longitudeClosestCity")]
-        public object LongitudeClosestCity { get; set; }
-
         [JsonProperty("latitude")]
-        public double Latitude { get; set; }
+        public double? Latitude { get; set; }
 
         [JsonProperty("longitude")]
-        public double Longitude { get; set; }
+        public double? Longitude { get; set; }
 
         [JsonProperty("estimatedCity")]
-        public bool EstimatedCity { get; set; }
+        public bool? EstimatedCity { get; set; }
 
         [JsonProperty("nearestCities")]
         public string[] NearestCities { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
