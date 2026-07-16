@@ -14,12 +14,12 @@ namespace APIVerve.API.ReverseGeocode
         /// The latitude of the coordinates
         /// </summary>
         [JsonProperty("lat")]
-        public string Lat { get; set; }
+        public double Lat { get; set; }
 
         /// <summary>
         /// The longitude of the coordinates
         /// </summary>
         [JsonProperty("lon")]
-        public string Lon { get; set; }
+        public double Lon { get; set; }
     }
 }
