@@ -1,13 +1,13 @@
-# [Reverse Geocode API](https://apiverve.com/marketplace/reversegeocode?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Reverse Geocode API](https://apiverve.com/marketplace/reversegeocode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Reverse Geocode is a simple tool for getting the location of a set of coordinates. Only supports USA and Canada Coordinates. It returns the city, state, and more.
+Reverse Geocode converts latitude and longitude coordinates into US and Canada location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, and country code.
 
 The Reverse Geocode API provides a simple, reliable way to integrate reverse geocode functionality into your applications. Built for developers who need production-ready reverse geocode capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/reversegeocode?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/reversegeocode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/reversegeocode?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/reversegeocode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -162,7 +162,7 @@ go get github.com/apiverve/reversegeocode-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Reverse Geocode API](https://apiverve.com/marketplace/reversegeocode?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Reverse Geocode API](https://apiverve.com/marketplace/reversegeocode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/reversegeocode](https://docs.apiverve.com/ref/reversegeocode)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -192,11 +192,45 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Reverse Geocode API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "zipcode": "11211",
+    "state_abbr": "NY",
+    "city": "Brooklyn",
+    "state": "New York",
+    "distance": 0.6501757300758664,
+    "latitudeClosest": "40.712090",
+    "longitudeClosest": "-73.95427",
+    "countryCode": "US",
+    "latitude": 40.714224,
+    "longitude": -73.961452,
+    "estimatedCity": true,
+    "nearestCities": [
+      "Brooklyn",
+      "Brooklyn Park",
+      "East Brooklyn",
+      "Brooklyn Center",
+      "Brooklyn Heights"
+    ]
+  }
 }
 ```
 
@@ -204,7 +238,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Reverse Geocode API](https://apiverve.com/marketplace/reversegeocode?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Reverse Geocode API](https://apiverve.com/marketplace/reversegeocode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

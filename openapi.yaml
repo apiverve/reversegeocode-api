@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: Reverse Geocode
   description: >-
-    Reverse Geocode is a simple tool for getting the location of a set of
-    coordinates. Only supports USA and Canada Coordinates. It returns the city,
-    state, and more.
+    Reverse Geocode converts latitude and longitude coordinates into US and
+    Canada location details. Pass geographic coordinates to retrieve the
+    corresponding city, state, postal code, and country code.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/reversegeocode:
     get:
-      summary: Get Coordinate Details
+      summary: Reverse Geocode
       description: >-
         Get the location of a set of coordinates, Only supports USA and Canada
         Coordinates
