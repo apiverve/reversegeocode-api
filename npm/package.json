@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/reversegeocode",
-  "version": "1.2.0",
-  "description": "Reverse Geocode is a simple tool for getting the location of a set of coordinates. Only supports USA and Canada Coordinates. It returns the city, state, and more.",
+  "version": "1.2.2",
+  "description": "Reverse Geocode converts latitude and longitude coordinates into US and Canada location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, and country code.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "reverse geocode", "reverse geocode api", "reverse geocode tool", "reverse geocode software", "reverse geocode service"
+    "reverse geocoding api", "coordinates to address api", "coordinates to address", "lat lon to city", "latitude longitude to zip code"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/reversegeocode-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/reversegeocode?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/reversegeocode?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
