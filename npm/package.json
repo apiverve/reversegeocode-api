@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/reversegeocode",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Reverse Geocode converts latitude and longitude coordinates into US and Canada location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, and country code.",
   "main": "index.js",
   "types": "index.d.ts",
