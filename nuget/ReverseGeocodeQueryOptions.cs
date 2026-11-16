@@ -21,5 +21,11 @@ namespace APIVerve.API.ReverseGeocode
         /// </summary>
         [JsonProperty("lon")]
         public double Lon { get; set; }
+
+        /// <summary>
+        /// Add a geocodes object with the point's geohash, plus code (Open Location Code) and degrees-minutes-seconds notation
+        /// </summary>
+        [JsonProperty("geocodes")]
+        public bool? Geocodes { get; set; }
     }
 }

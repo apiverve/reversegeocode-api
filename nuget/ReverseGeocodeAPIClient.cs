@@ -68,7 +68,8 @@ namespace APIVerve.API.ReverseGeocode
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
             { "lat", new ValidationRule { Type = "number", Required = true, Min = -90, Max = 90 } },
-            { "lon", new ValidationRule { Type = "number", Required = true, Min = -180, Max = 180 } }
+            { "lon", new ValidationRule { Type = "number", Required = true, Min = -180, Max = 180 } },
+            { "geocodes", new ValidationRule { Type = "boolean", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>

@@ -67,6 +67,39 @@ namespace APIVerve.API.ReverseGeocode
 
         [JsonProperty("nearestCities")]
         public string[] NearestCities { get; set; }
+
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
+
+        [JsonProperty("county")]
+        public string County { get; set; }
+
+        [JsonProperty("countyFips")]
+        public long? CountyFips { get; set; }
+
+        [JsonProperty("geocodes")]
+        public Geocodes Geocodes { get; set; }
+    }
+
+    public partial class Geocodes
+    {
+        [JsonProperty("geohash")]
+        public string Geohash { get; set; }
+
+        [JsonProperty("plusCode")]
+        public string PlusCode { get; set; }
+
+        [JsonProperty("dms")]
+        public Dms Dms { get; set; }
+    }
+
+    public partial class Dms
+    {
+        [JsonProperty("latitude")]
+        public string Latitude { get; set; }
+
+        [JsonProperty("longitude")]
+        public string Longitude { get; set; }
     }
 
     public partial class Premium

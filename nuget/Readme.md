@@ -1,7 +1,7 @@
 Reverse Geocode API
 ============
 
-Reverse Geocode converts latitude and longitude coordinates into US and Canada location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, and country code.
+Reverse Geocode converts latitude and longitude coordinates into US, Canada and Australia location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, country code, time zone and US county. Paid plans can add the point's geohash, plus code and degrees-minutes-seconds notation.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.ReverseGeocode.svg)](https://www.nuget.org/packages/APIVerve.API.ReverseGeocode)
@@ -61,7 +61,8 @@ class Program
 
         var queryOptions = new ReverseGeocodeQueryOptions {
             Lat = 40.714224,
-            Lon = -73.961452
+            Lon = -73.961452,
+            Geocodes = true
         };
 
         // Make the API call
@@ -126,7 +127,8 @@ public class Example
 
         var queryOptions = new ReverseGeocodeQueryOptions {
             Lat = 40.714224,
-            Lon = -73.961452
+            Lon = -73.961452,
+            Geocodes = true
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -159,7 +161,8 @@ public class Example
 
         var queryOptions = new ReverseGeocodeQueryOptions {
             Lat = 40.714224,
-            Lon = -73.961452
+            Lon = -73.961452,
+            Geocodes = true
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -197,7 +200,8 @@ public class Example
 
         var queryOptions = new ReverseGeocodeQueryOptions {
             Lat = 40.714224,
-            Lon = -73.961452
+            Lon = -73.961452,
+            Geocodes = true
         };
 
         try
@@ -254,7 +258,8 @@ public class Example
 
         var queryOptions = new ReverseGeocodeQueryOptions {
             Lat = 40.714224,
-            Lon = -73.961452
+            Lon = -73.961452,
+            Geocodes = true
         };
 
         try
@@ -296,7 +301,8 @@ apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new ReverseGeocodeQueryOptions {
     Lat = 40.714224,
-    Lon = -73.961452
+    Lon = -73.961452,
+    Geocodes = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -323,7 +329,8 @@ apiClient.SetLogger(message =>
 
 var queryOptions = new ReverseGeocodeQueryOptions {
     Lat = 40.714224,
-    Lon = -73.961452
+    Lon = -73.961452,
+    Geocodes = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -342,7 +349,8 @@ apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (defau
 
 var queryOptions = new ReverseGeocodeQueryOptions {
     Lat = 40.714224,
-    Lon = -73.961452
+    Lon = -73.961452,
+    Geocodes = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -355,7 +363,8 @@ The API client implements `IDisposable` for proper resource cleanup:
 ```csharp
 var queryOptions = new ReverseGeocodeQueryOptions {
     Lat = 40.714224,
-    Lon = -73.961452
+    Lon = -73.961452,
+    Geocodes = true
 };
 
 using (var apiClient = new ReverseGeocodeAPIClient("[YOUR_API_KEY]"))
@@ -392,7 +401,18 @@ using (var apiClient = new ReverseGeocodeAPIClient("[YOUR_API_KEY]"))
       "East Brooklyn",
       "Brooklyn Center",
       "Brooklyn Heights"
-    ]
+    ],
+    "timezone": "America/New_York",
+    "county": "Kings County",
+    "countyFips": "36047",
+    "geocodes": {
+      "geohash": "dr5rsgyct",
+      "plusCode": "87G8P27Q+MC",
+      "dms": {
+        "latitude": "40°42'51.2\"N",
+        "longitude": "73°57'41.2\"W"
+      }
+    }
   }
 }
 ```
