@@ -1,6 +1,6 @@
 # Reverse Geocode API - PHP Package
 
-Reverse Geocode converts latitude and longitude coordinates into US and Canada location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, and country code.
+Reverse Geocode converts latitude and longitude coordinates into US, Canada and Australia location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, country code, time zone and US county. Paid plans can add the point's geohash, plus code and degrees-minutes-seconds notation.
 
 ## Installation
 
@@ -29,7 +29,8 @@ $client = new Client('YOUR_API_KEY');
 // Make a request
 $response = $client->execute([
     'lat' => 40.714224,
-    'lon' => -73.961452
+    'lon' => -73.961452,
+    'geocodes' => true
 ]);
 
 // Print the response
@@ -45,7 +46,7 @@ use APIVerve\Reversegeocode\Exceptions\APIException;
 use APIVerve\Reversegeocode\Exceptions\ValidationException;
 
 try {
-    $response = $client->execute(['lat' => 40.714224, 'lon' => -73.961452]);
+    $response = $client->execute(['lat' => 40.714224, 'lon' => -73.961452, 'geocodes' => true]);
     print_r($response['data']);
 } catch (ValidationException $e) {
     echo "Validation error: " . implode(', ', $e->getErrors());
@@ -89,7 +90,18 @@ $client = new Client(
       "East Brooklyn",
       "Brooklyn Center",
       "Brooklyn Heights"
-    ]
+    ],
+    "timezone": "America/New_York",
+    "county": "Kings County",
+    "countyFips": "36047",
+    "geocodes": {
+      "geohash": "dr5rsgyct",
+      "plusCode": "87G8P27Q+MC",
+      "dms": {
+        "latitude": "40°42'51.2\"N",
+        "longitude": "73°57'41.2\"W"
+      }
+    }
   }
 }
 ```

@@ -15,7 +15,7 @@ use APIVerve\Reversegeocode\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['lat' => 40.714224, 'lon' => -73.961452]);
+ * $response = $client->execute(['lat' => 40.714224, 'lon' => -73.961452, 'geocodes' => true]);
  * print_r($response);
  * ```
  *
@@ -35,7 +35,8 @@ class Client
      */
     private const VALIDATION_RULES = [
         'lat' => ['type' => 'number', 'required' => true, 'min' => -90, 'max' => 90],
-        'lon' => ['type' => 'number', 'required' => true, 'min' => -180, 'max' => 180]
+        'lon' => ['type' => 'number', 'required' => true, 'min' => -180, 'max' => 180],
+        'geocodes' => ['type' => 'boolean', 'required' => false]
     ];
 
     /**
