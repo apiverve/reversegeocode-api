@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "apiverve_reversegeocode"
-  spec.version       = "1.2.5"
+  spec.version       = "1.2.6"
   spec.authors       = ["APIVerve"]
   spec.email         = ["hello@apiverve.com"]
 
   spec.summary       = "Reverse Geocode API - Ruby Client"
-  spec.description   = "Reverse Geocode converts latitude and longitude coordinates into US and Canada location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, and country code."
+  spec.description   = "Reverse Geocode converts latitude and longitude coordinates into US, Canada and Australia location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, country code, time zone and US county. Paid plans can add the point's geohash, plus code and degrees-minutes-seconds notation."
   spec.homepage      = "https://apiverve.com/marketplace/reversegeocode?utm_source=ruby&utm_medium=referral&utm_content=homepage"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.7.0"

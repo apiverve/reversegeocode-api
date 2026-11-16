@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Reversegeocode::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ lat: 40.714224, lon: -73.961452 })
+    #   response = client.execute({ lat: 40.714224, lon: -73.961452, geocodes: true })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/reversegeocode?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'lat' => { type: 'number', required: true, min: -90, max: 90 }, 'lon' => { type: 'number', required: true, min: -180, max: 180 } }
+      VALIDATION_RULES = { 'lat' => { type: 'number', required: true, min: -90, max: 90 }, 'lon' => { type: 'number', required: true, min: -180, max: 180 }, 'geocodes' => { type: 'boolean', required: false } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {
