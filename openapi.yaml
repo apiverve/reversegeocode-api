@@ -2,9 +2,11 @@ openapi: 3.0.4
 info:
   title: Reverse Geocode
   description: >-
-    Reverse Geocode converts latitude and longitude coordinates into US and
-    Canada location details. Pass geographic coordinates to retrieve the
-    corresponding city, state, postal code, and country code.
+    Reverse Geocode converts latitude and longitude coordinates into US, Canada
+    and Australia location details. Pass geographic coordinates to retrieve the
+    corresponding city, state, postal code, country code, time zone and US
+    county. Paid plans can add the point's geohash, plus code and
+    degrees-minutes-seconds notation.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -21,8 +23,8 @@ paths:
     get:
       summary: Reverse Geocode
       description: >-
-        Get the location of a set of coordinates, Only supports USA and Canada
-        Coordinates
+        Get the location of a set of coordinates, Only supports USA, Canada and
+        Australia Coordinates
       operationId: reversegeocode
       parameters:
         - name: lat
@@ -39,6 +41,15 @@ paths:
           required: true
           description: The longitude of the coordinates
           example: -73.961452
+        - name: geocodes
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Add a geocodes object with the point's geohash, plus code (Open
+            Location Code) and degrees-minutes-seconds notation
+          example: true
       responses:
         '200':
           description: Successful Response
@@ -77,6 +88,15 @@ paths:
                     - East Brooklyn
                     - Brooklyn Center
                     - Brooklyn Heights
+                  timezone: America/New_York
+                  county: Kings County
+                  countyFips: '36047'
+                  geocodes:
+                    geohash: dr5rsgyct
+                    plusCode: 87G8P27Q+MC
+                    dms:
+                      latitude: 40°42'51.2"N
+                      longitude: 73°57'41.2"W
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':

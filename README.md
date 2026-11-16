@@ -1,6 +1,6 @@
 # [Reverse Geocode API](https://apiverve.com/marketplace/reversegeocode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Reverse Geocode converts latitude and longitude coordinates into US and Canada location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, and country code.
+Reverse Geocode converts latitude and longitude coordinates into US, Canada and Australia location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, country code, time zone and US county. Paid plans can add the point&#x27;s geohash, plus code and degrees-minutes-seconds notation.
 
 The Reverse Geocode API provides a simple, reliable way to integrate reverse geocode functionality into your applications. Built for developers who need production-ready reverse geocode capabilities without the complexity of building from scratch.
 
@@ -229,7 +229,18 @@ A real response from the Reverse Geocode API:
       "East Brooklyn",
       "Brooklyn Center",
       "Brooklyn Heights"
-    ]
+    ],
+    "timezone": "America/New_York",
+    "county": "Kings County",
+    "countyFips": "36047",
+    "geocodes": {
+      "geohash": "dr5rsgyct",
+      "plusCode": "87G8P27Q+MC",
+      "dms": {
+        "latitude": "40°42'51.2\"N",
+        "longitude": "73°57'41.2\"W"
+      }
+    }
   }
 }
 ```
