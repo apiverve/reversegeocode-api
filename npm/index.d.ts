@@ -37,6 +37,21 @@ declare module '@apiverve/reversegeocode' {
       longitude:        number | null;
       estimatedCity:    boolean | null;
       nearestCities:    (null | string)[];
+      timezone:         null | string;
+      county:           null | string;
+      countyFIPS:       null | string;
+      geocodes:         Geocodes;
+  }
+  
+  interface Geocodes {
+      geohash:  null | string;
+      plusCode: null | string;
+      dms:      Dms;
+  }
+  
+  interface Dms {
+      latitude:  null | string;
+      longitude: null | string;
   }
 
   export default class reversegeocodeWrapper {

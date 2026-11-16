@@ -30,7 +30,7 @@ class reversegeocodeWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/reversegeocode';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"lat":{"type":"number","required":true,"min":-90,"max":90},"lon":{"type":"number","required":true,"min":-180,"max":180}};
+        this.validationRules = {"lat":{"type":"number","required":true,"min":-90,"max":90},"lon":{"type":"number","required":true,"min":-180,"max":180},"geocodes":{"type":"boolean","required":false}};
     }
 
     /**

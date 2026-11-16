@@ -16,7 +16,8 @@ const api = new reversegeocodeAPI({
 // Example query
 var query = {
   lat: 40.714224,
-  lon: -73.961452
+  lon: -73.961452,
+  geocodes: true
 };
 
 // Make the API request using callback

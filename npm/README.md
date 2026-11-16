@@ -1,6 +1,6 @@
 # Reverse Geocode API
 
-Reverse Geocode converts latitude and longitude coordinates into US and Canada location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, and country code.
+Reverse Geocode converts latitude and longitude coordinates into US, Canada and Australia location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, country code, time zone and US county. Paid plans can add the point's geohash, plus code and degrees-minutes-seconds notation.
 
 [![npm version](https://img.shields.io/npm/v/@apiverve/reversegeocode.svg)](https://www.npmjs.com/package/@apiverve/reversegeocode)
 
@@ -58,7 +58,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 ```javascript
 var query = {
   lat: 40.714224,
-  lon: -73.961452
+  lon: -73.961452,
+  geocodes: true
 };
 
 api.execute(query, function (error, data) {
@@ -79,7 +80,8 @@ You can also use promises to make requests. The API returns a promise that you c
 ```javascript
 var query = {
   lat: 40.714224,
-  lon: -73.961452
+  lon: -73.961452,
+  geocodes: true
 };
 
 api.execute(query)
@@ -101,7 +103,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 async function makeRequest() {
     var query = {
   lat: 40.714224,
-  lon: -73.961452
+  lon: -73.961452,
+  geocodes: true
 };
 
     try {
@@ -139,7 +142,18 @@ async function makeRequest() {
       "East Brooklyn",
       "Brooklyn Center",
       "Brooklyn Heights"
-    ]
+    ],
+    "timezone": "America/New_York",
+    "county": "Kings County",
+    "countyFips": "36047",
+    "geocodes": {
+      "geohash": "dr5rsgyct",
+      "plusCode": "87G8P27Q+MC",
+      "dms": {
+        "latitude": "40°42'51.2\"N",
+        "longitude": "73°57'41.2\"W"
+      }
+    }
   }
 }
 ```
