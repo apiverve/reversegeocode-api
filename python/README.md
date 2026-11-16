@@ -1,7 +1,7 @@
 Reverse Geocode API
 ============
 
-Reverse Geocode converts latitude and longitude coordinates into US and Canada location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, and country code.
+Reverse Geocode converts latitude and longitude coordinates into US, Canada and Australia location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, country code, time zone and US county. Paid plans can add the point's geohash, plus code and degrees-minutes-seconds notation.
 
 
 [![PyPI version](https://img.shields.io/pypi/v/apiverve-reversegeocode.svg)](https://pypi.org/project/apiverve-reversegeocode/)
@@ -45,7 +45,8 @@ api = ReversegeocodeAPIClient("[YOUR_API_KEY]")
 
 query = {
     "lat": 40.714224,
-    "lon": -73.961452
+    "lon": -73.961452,
+    "geocodes": true
 }
 
 try:
@@ -86,7 +87,8 @@ Using the API client, you can perform requests to the API.
 ```python
 query = {
     "lat": 40.714224,
-    "lon": -73.961452
+    "lon": -73.961452,
+    "geocodes": true
 }
 ```
 
@@ -124,7 +126,18 @@ print(result)
       "East Brooklyn",
       "Brooklyn Center",
       "Brooklyn Heights"
-    ]
+    ],
+    "timezone": "America/New_York",
+    "county": "Kings County",
+    "countyFips": "36047",
+    "geocodes": {
+      "geohash": "dr5rsgyct",
+      "plusCode": "87G8P27Q+MC",
+      "dms": {
+        "latitude": "40°42'51.2\"N",
+        "longitude": "73°57'41.2\"W"
+      }
+    }
   }
 }
 ```
@@ -144,7 +157,8 @@ api = ReversegeocodeAPIClient("[YOUR_API_KEY]")
 
 query = {
     "lat": 40.714224,
-    "lon": -73.961452
+    "lon": -73.961452,
+    "geocodes": true
 }
 
 try:
@@ -168,7 +182,8 @@ api = ReversegeocodeAPIClient("[YOUR_API_KEY]")
 
 query = {
     "lat": 40.714224,
-    "lon": -73.961452
+    "lon": -73.961452,
+    "geocodes": true
 }
 
 try:
@@ -205,7 +220,8 @@ from apiverve_reversegeocode.apiClient import ReversegeocodeAPIClient, Reversege
 
 query = {
     "lat": 40.714224,
-    "lon": -73.961452
+    "lon": -73.961452,
+    "geocodes": true
 }
 
 # Using context manager ensures proper cleanup
@@ -234,7 +250,8 @@ api = ReversegeocodeAPIClient("[YOUR_API_KEY]", debug=True)
 
 query = {
     "lat": 40.714224,
-    "lon": -73.961452
+    "lon": -73.961452,
+    "geocodes": true
 }
 
 # Debug information will be printed to console
@@ -252,7 +269,8 @@ api = ReversegeocodeAPIClient("[YOUR_API_KEY]")
 
 query = {
     "lat": 40.714224,
-    "lon": -73.961452
+    "lon": -73.961452,
+    "geocodes": true
 }
 
 try:

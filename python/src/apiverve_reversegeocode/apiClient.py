@@ -25,7 +25,8 @@ class ReversegeocodeAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "lat": {"type": "number", "required": True, "min": -90, "max": 90},
-        "lon": {"type": "number", "required": True, "min": -180, "max": 180}
+        "lon": {"type": "number", "required": True, "min": -180, "max": 180},
+        "geocodes": {"type": "boolean", "required": False}
     }
 
     # Format validation patterns

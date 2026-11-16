@@ -1,10 +1,10 @@
 [project]
 name = "apiverve-reversegeocode"
-version = "1.2.5"
+version = "1.2.6"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "Reverse Geocode converts latitude and longitude coordinates into US and Canada location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, and country code."
+description = "Reverse Geocode converts latitude and longitude coordinates into US, Canada and Australia location details. Pass geographic coordinates to retrieve the corresponding city, state, postal code, country code, time zone and US county. Paid plans can add the point's geohash, plus code and degrees-minutes-seconds notation."
 keywords = ["reverse geocoding api", "coordinates to address api", "coordinates to address", "lat lon to city", "latitude longitude to zip code"]
 readme = "README.md"
 requires-python = ">=3.9"
